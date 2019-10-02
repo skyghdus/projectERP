@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.erp.app.view.ClientController">
+   <children>
+      <SplitPane prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="clientTable" prefHeight="798.0" prefWidth="541.0">
+                    <columns>
+                      <TableColumn fx:id="idColumn" prefWidth="48.0" style="color: #29709a;" text="NO." />
+                      <TableColumn fx:id="nameColumn" prefWidth="151.0" text="거래처" />
+                        <TableColumn fx:id="cnColumn" prefWidth="143.0" text="사업자등록번호" />
+                        <TableColumn fx:id="ceoNameColumn" minWidth="0.0" prefWidth="71.0" text="대표자" />
+                        <TableColumn fx:id="reDateColumn" prefWidth="127.0" text="최근이용일자" />
+                    </columns>
+                  </TableView>
+                  <AnchorPane layoutX="541.0" prefHeight="798.0" prefWidth="657.0" style="-fx-background-color: white;">
+                     <children>
+                        <GridPane layoutX="45.0" layoutY="80.0" prefHeight="358.0" prefWidth="427.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="165.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="165.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="340.0" minHeight="6.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="340.0" minHeight="6.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="340.0" minHeight="6.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="340.0" minHeight="6.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="340.0" minHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="사업자등록번호" textFill="#29709a" />
+                              <Label text="대표자명" textFill="#29709a" GridPane.rowIndex="2" />
+                              <Label text="우편번호" textFill="#29709a" GridPane.rowIndex="5" />
+                              <Label text="전화번호" textFill="#29709a" GridPane.rowIndex="4" />
+                              <Label text="비고" textFill="#29709a" GridPane.rowIndex="6" />
+                              <Label text="주민등록번호" textFill="#29709a" GridPane.rowIndex="3" />
+                              <Label text="거래처명" textFill="#29709a" GridPane.rowIndex="1" />
+                              <Label fx:id="lano" GridPane.columnIndex="1" />
+                              <Label fx:id="laname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label fx:id="laceoname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label fx:id="lasn" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="laph" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="laac" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label fx:id="laetc" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                        <GridPane layoutX="118.0" layoutY="485.0" prefHeight="30.0" prefWidth="398.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#handleNewClient" style="-fx-background-color: #29709a;" text="New" textFill="WHITE" />
+                              <Button mnemonicParsing="false" onAction="#handleEditClient" style="-fx-background-color: #29709a;" text="Edit" textFill="WHITE" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#handleDeleteClient" style="-fx-background-color: #29709a;" text="Delete" textFill="WHITE" GridPane.columnIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Pane layoutY="53.0" prefHeight="14.0" prefWidth="657.0" style="-fx-background-color: #29709a;" AnchorPane.leftAnchor="0.0" />
+                        <Label layoutX="22.0" layoutY="14.0" text="| 거래처 등록정보" textFill="#29709a">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutY="447.0" prefHeight="14.0" prefWidth="657.0" style="-fx-background-color: #29709a;" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

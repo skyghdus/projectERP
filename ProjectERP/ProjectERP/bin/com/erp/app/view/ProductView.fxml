@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.erp.app.view.ProductController">
+   <children>
+      <SplitPane dividerPositions="0.31385642737896496" layoutX="500.0" layoutY="262.0" prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="295.0" style="-fx-background-color: #29709a;">
+               <children>
+                  <TableView fx:id="resourceTable" layoutX="104.0" layoutY="78.0" prefHeight="620.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="78.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="137.0" text="name" />
+                      <TableColumn fx:id="idColumn" prefWidth="97.0" text="id" />
+                        <TableColumn fx:id="categoryColumn" prefWidth="134.0" text="Categorize" />
+                    </columns>
+                  </TableView>
+                  <TextArea fx:id="searchTa" layoutX="14.0" layoutY="24.0" prefHeight="33.0" prefWidth="240.0" />
+                  <Button layoutX="275.0" layoutY="24.0" mnemonicParsing="false" onAction="#searchButton" prefHeight="33.0" prefWidth="81.0" text="search" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="854.0">
+               <children>
+                  <GridPane layoutX="20.0" layoutY="117.0" prefHeight="382.0" prefWidth="448.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="224.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="224.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="name">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="ID" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="price" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="stack" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="idLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="stackLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="cost" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="costLabel" text="costLabel" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <Button layoutX="68.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleNewProduct" style="-fx-background-color: #29709a;" text="new" textFill="WHITE" />
+                  <Button layoutX="154.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleEditProduct" style="-fx-background-color: #29709a;" text="edit" textFill="WHITE" />
+                  <Button layoutX="238.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleDeleteProduct" style="-fx-background-color: #29709a;" text="delete" textFill="WHITE" />
+                  <Pane layoutX="-9.0" prefHeight="79.0" prefWidth="828.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="28.0" layoutY="29.0" text="| Product Imformation" textFill="#29709a">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

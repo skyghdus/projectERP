@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.erp.app.view.ManufactureController">
+   <children>
+      <SplitPane dividerPositions="0.5087719298245614" layoutX="366.0" layoutY="285.0" orientation="VERTICAL" prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="266.0" prefWidth="1198.0">
+               <children>
+                  <GridPane layoutX="140.0" layoutY="113.0" prefHeight="222.0" prefWidth="502.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="제품" />
+                        <Label text="개수" GridPane.rowIndex="2" />
+                        <TextField fx:id="tf1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="cb" onAction="#selectProduct" prefHeight="27.0" prefWidth="277.0" GridPane.columnIndex="1" />
+                        <Label text="제조 완료 여부" GridPane.rowIndex="5" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#endButton" style="-fx-background-color: #29709a;" text="완료" textFill="WHITE" GridPane.columnIndex="1" />
+                              <Label fx:id="manufactured" text="Label" />
+                           </children>
+                        </GridPane>
+                        <Button mnemonicParsing="false" onAction="#startButton" style="-fx-background-color: #29709a;" text="New" textFill="WHITE" GridPane.rowIndex="6" />
+                        <Button mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #29709a;" text="Delete" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label text="판매가" GridPane.rowIndex="1" />
+                        <Label text="제작단가" GridPane.rowIndex="3" />
+                        <Label fx:id="costla" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="costla2" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="색상" GridPane.rowIndex="4" />
+                        <ColorPicker fx:id="cp" prefHeight="27.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="manufactTable" layoutX="158.0" layoutY="13.0" prefHeight="451.0" prefWidth="1198.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="75.0" text="이름" />
+                      <TableColumn fx:id="sellingPriceColumn" prefWidth="75.0" text="판매가" />
+                        <TableColumn fx:id="productionCostColumn" prefWidth="75.0" text="제작단가" />
+                        <TableColumn fx:id="stackColumn" prefWidth="75.0" text="개수" />
+                        <TableColumn fx:id="colorColumn" prefWidth="75.0" text="색상" />
+                        <TableColumn fx:id="manufacturedColumn" prefWidth="116.0" text="제작완료 여부" />
+                        <TableColumn fx:id="startColumn" prefWidth="106.0" text="시작일자" />
+                        <TableColumn fx:id="endColumn" prefWidth="107.0" text="완료일자" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Label layoutX="30.0" layoutY="31.0" text="| Manufacturing" textFill="#29709a">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

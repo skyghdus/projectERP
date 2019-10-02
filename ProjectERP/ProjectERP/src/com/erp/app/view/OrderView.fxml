@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.erp.app.view.OrderController">
+   <children>
+      <SplitPane dividerPositions="0.4699140401146132" layoutX="140.0" layoutY="109.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                <AnchorPane layoutY="-6.0" minHeight="0.0" minWidth="0.0" prefHeight="255.0" prefWidth="598.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="21.0" text="| Order Imformation" textFill="#29709a">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Label>
+                        <Button layoutX="483.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleOK" style="-fx-background-color: #29709a;" text="주문" textFill="WHITE" />
+                        <Button layoutX="559.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleDelete" style="-fx-background-color: #29709a;" text="취소" textFill="WHITE" />
+                        <Label layoutX="280.0" layoutY="255.0" text="합계액" />
+                        <Label fx:id="pricela" layoutX="377.0" layoutY="255.0" text="Label" />
+                        <Label layoutX="82.0" layoutY="255.0" text="주문가능 : " />
+                        <Label fx:id="orderOK" layoutX="182.0" layoutY="255.0" text="Label" />
+                        <GridPane layoutX="105.0" layoutY="58.0" maxHeight="-Infinity" prefHeight="185.0" prefWidth="523.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="140.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="383.0" minWidth="10.0" prefWidth="383.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="94.0" text="사업자등록번호" GridPane.rowIndex="1" />
+                              <Label text="대표명" GridPane.rowIndex="2" />
+                              <Label text="상품명" GridPane.rowIndex="3" />
+                              <Label text="수량" GridPane.rowIndex="4" />
+                              <Label fx:id="ceoname" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="요청사항" GridPane.rowIndex="5" />
+                              <TextField fx:id="crntf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="stacktf" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <TextField fx:id="etctf" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <ComboBox fx:id="cb1" onAction="#selectProduct" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="사업체명" />
+                              <ComboBox fx:id="cb2" onAction="#selectClient" prefWidth="150.0" GridPane.columnIndex="1" />
+                              <DatePicker fx:id="dp" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label text="주문날짜" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="121.0" prefWidth="598.0">
+               <children>
+                  <TableView fx:id="orderTable" layoutX="172.0" layoutY="-31.0" prefHeight="137.0" prefWidth="598.0" style="-fx-background-color: #29709a;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="crnColumn" prefWidth="109.0" text="사업자등록번호" />
+                      <TableColumn fx:id="productNameColumn" prefWidth="97.0" text="상품명" />
+                        <TableColumn fx:id="stackColumn" prefWidth="97.0" text="수량" />
+                        <TableColumn fx:id="priceColumn" prefWidth="97.0" text="합계액" />
+                        <TableColumn fx:id="orderDateColumn" prefWidth="97.0" text="주문시간" />
+                        <TableColumn fx:id="etcColumn" prefWidth="97.0" text="비고" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

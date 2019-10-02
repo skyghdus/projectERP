@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.erp.app.view.RootController">
+   <top>
+      <HBox prefHeight="29.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" onMouseClicked="#handleResource" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #29709a;">
+               <children>
+                  <Label text="Resource" textFill="#fcfcfc" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" onMouseClicked="#handleProduct" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #29709a;">
+               <children>
+                  <Label text="Product" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" onMouseClicked="#handleClient" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #29709a;">
+               <children>
+                  <Label text="Client" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" onMouseClicked="#handleOrder" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #29709a;">
+               <children>
+                  <Label text="Order" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" onMouseClicked="#handleStaff" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #29709a;">
+               <children>
+                  <Label text="Staff" textFill="WHITE" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" onMouseClicked="#handleManufacturing" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #29709a;">
+               <children>
+                  <Label text="Manufacturing" textFill="WHITE" />
+               </children></HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

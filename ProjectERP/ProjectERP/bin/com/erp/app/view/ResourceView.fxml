@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.erp.app.view.ResourceController">
+   <children>
+      <SplitPane dividerPositions="0.32053422370617696" layoutX="500.0" layoutY="262.0" prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="353.0" style="-fx-background-color: #29709a;">
+               <children>
+                  <TableView fx:id="resourceTable" layoutX="104.0" layoutY="77.0" prefHeight="621.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="77.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="139.0" text="name" />
+                      <TableColumn fx:id="idColumn" prefWidth="86.0" text="id" />
+                        <TableColumn fx:id="Categorize" minWidth="0.0" prefWidth="153.0" text="Categorize" />
+                    </columns>
+                  </TableView>
+                  <TextArea fx:id="searchTa" layoutX="26.0" layoutY="23.0" prefHeight="33.0" prefWidth="219.0" />
+                  <Button fx:id="searchBt" layoutX="270.0" layoutY="23.0" mnemonicParsing="false" onAction="#searchButton" prefHeight="33.0" prefWidth="82.0" text="search" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="809.0" style="-fx-background-color: #29709;">
+               <children>
+                  <Button layoutX="68.0" layoutY="506.0" mnemonicParsing="false" onAction="#handleNewResource" style="-fx-background-color: #29709a;" text="new" textFill="WHITE" />
+                  <Button layoutX="152.0" layoutY="506.0" mnemonicParsing="false" onAction="#handleEditResource" style="-fx-background-color: #29709a;" text="edit" textFill="WHITE" />
+                  <Button layoutX="234.0" layoutY="506.0" mnemonicParsing="false" onAction="#handleDeleteResource" style="-fx-background-color: #29709a;" text="delete" textFill="WHITE" />
+                  <Button layoutX="554.0" layoutY="506.0" mnemonicParsing="false" onAction="#handlePieChart" style="-fx-background-color: #29709a;" text="show graph" textFill="WHITE" />
+                  <GridPane alignment="CENTER_LEFT" layoutX="37.0" layoutY="156.0" prefHeight="285.0" prefWidth="394.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="197.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.0" minWidth="10.0" prefWidth="221.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="59.0" text="name">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="Standard" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="price" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="stack" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="standardLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="priceLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="stackLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <Pane prefHeight="76.0" prefWidth="809.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="23.0" layoutY="27.0" text="| Resource Imformation " textFill="#29709a">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Label>
+                     </children>
+                  </Pane>
+                  <PieChart fx:id="pieChart" layoutX="349.0" layoutY="99.0" />
+                  <BarChart layoutX="248.0" layoutY="99.0" opacity="0.29">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

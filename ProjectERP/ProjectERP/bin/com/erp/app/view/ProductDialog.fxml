@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.erp.app.view.ProductDialogController">
+   <children>
+      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="370.0" prefWidth="273.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleOk" style="-fx-background-color: #29709a;" text="Ok" textFill="WHITE" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" onAction="#handleCancel" style="-fx-background-color: #29709a;" text="Cancel" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="name" />
+            <Label text="category" GridPane.rowIndex="1" />
+            <Label text="price" GridPane.rowIndex="2" />
+            <Label text="stack" GridPane.rowIndex="3" />
+            <TextField fx:id="tf1" GridPane.columnIndex="1" />
+            <TextField fx:id="tf2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tf3" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tf4" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="cost" GridPane.rowIndex="4" />
+            <TextField fx:id="tf5" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <TableView fx:id="resourceTable" layoutX="364.0" layoutY="55.0" prefHeight="269.0" prefWidth="150.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="C1" />
+          <TableColumn fx:id="stackColumn" prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <TextField fx:id="tf6" layoutX="364.0" layoutY="337.0" />
+      <Button layoutX="514.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleSetStack" style="-fx-background-color: #29709a;" text="Button" textFill="WHITE" />
+      <Label layoutX="364.0" layoutY="28.0" text="현재 갯수" />
+      <Label fx:id="la1" layoutX="471.0" layoutY="28.0" />
+   </children>
+</AnchorPane>

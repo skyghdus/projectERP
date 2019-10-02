@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/com/erp/app/MainApp.java=UTF-8
+encoding//src/com/erp/app/model/Product.java=UTF-8
+encoding//src/com/erp/app/model/Resource.java=UTF-8
+encoding//src/com/erp/app/view/ClientController.java=UTF-8
+encoding//src/com/erp/app/view/OrderController.java=UTF-8
+encoding//src/com/erp/app/view/ProductController.java=UTF-8
+encoding//src/com/erp/app/view/ProductDialogController.java=UTF-8
+encoding//src/com/erp/app/view/ResourceController.java=UTF-8
+encoding//src/com/erp/app/view/RootController.java=UTF-8

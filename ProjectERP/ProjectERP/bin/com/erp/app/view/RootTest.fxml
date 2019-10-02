@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.erp.app.view.RootController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="resource" mnemonicParsing="false" onAction="#handleResource" text="Resource">
+            <items>
+              <MenuItem fx:id="resource" mnemonicParsing="false" onAction="#handleResource" text="Resource" />
+            </items>
+          </Menu>
+          <Menu fx:id="product1" mnemonicParsing="false" onAction="#handleProduct" text="Product">
+               <items>
+                  <MenuItem fx:id="product" mnemonicParsing="false" onAction="#handleProduct" text="Product" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" onAction="#handleClient" text="Client">
+            <items>
+              <MenuItem fx:id="client" mnemonicParsing="false" onAction="#handleClient" text="Client" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" onAction="#handleOrder" text="Order">
+               <items>
+                  <MenuItem fx:id="order" mnemonicParsing="false" onAction="#handleOrder" text="Order" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Staff">
+               <items>
+                  <MenuItem fx:id="staff" mnemonicParsing="false" onAction="#handleStaff" text="Staff" />
+                  <MenuItem fx:id="schedule" mnemonicParsing="false" onAction="#handleOrder" text="Schedule" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
