@@ -10,7 +10,8 @@ public class SignInController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-
+		System.out.println("git Test");
 	}
+	
 
 }
