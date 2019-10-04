@@ -26,7 +26,7 @@
         </rowConstraints>
          <children>
             <Button mnemonicParsing="false" onAction="#loginHandler" text="login" GridPane.rowIndex="4" />
-            <Button mnemonicParsing="false" text="회원가입" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#signinHandler" text="회원가입" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="ID" GridPane.rowIndex="1" />
             <Label text=" Password" GridPane.rowIndex="2" />
             <PasswordField fx:id="pf" GridPane.columnIndex="1" GridPane.rowIndex="2" />

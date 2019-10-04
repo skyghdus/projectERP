@@ -26,6 +26,7 @@ import com.erp.app.view.ProductResourceDialogController;
 import com.erp.app.view.ResourceController;
 import com.erp.app.view.ResourceDialogController;
 import com.erp.app.view.RootController;
+import com.erp.app.view.SignInController;
 import com.erp.app.view.StaffController;
 import com.erp.app.view.StaffDialogController;
 import com.erp.app.view.DBConnection;
@@ -70,9 +71,6 @@ public class MainApp extends Application {
         }
         
         //showProductOverview();
-	}
-	public void test() {
-		connection.test();
 	}
 	public void insert(String s) {
 		connection.insertQuery(s); 
@@ -426,18 +424,23 @@ public class MainApp extends Application {
 	public ObservableList<Manufacturing> getManufactData() {
 		return manufactData;
 	}
+
 	public ObservableList<Resource> getResourceData() {
         return resourceData;
     }
+
 	public ObservableList<Product> getProductData() {
         return productData;
     }
+
 	public ObservableList<Client> getClientData() {
         return clientData;
     }
+
 	public ObservableList<Order> getOrderData() {
 		return orderData;
 	}
+
 	public ObservableList<Staff> getStaffData() {
 		return staffData;
 	}
@@ -445,6 +448,7 @@ public class MainApp extends Application {
 	public void setLoginDepartment(String department) {
 		loggedin=department;
 	}
+	
 	public String getLoggedinDepartment() {
 		return loggedin;
 	}
@@ -598,11 +602,11 @@ public class MainApp extends Application {
 	    }
 	}
 	
-	public boolean showLoginDialog() {
+	public boolean showSignInDialog() {
 	    try {
 	        // fxml 占쎈솁占쎌뵬占쎌뱽 嚥≪뮆諭띰옙釉��⑨옙 占쎄돌占쎄퐣 占쎄퉱嚥≪뮇�뒲 占쎈뮞占쎈�믭옙�뵠筌욑옙�몴占� 筌띾슢諭븝옙�뼄.
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(MainApp.class.getResource("view/LoginView.fxml"));
+	        loader.setLocation(MainApp.class.getResource("view/SignInView.fxml"));
 	        AnchorPane page = (AnchorPane) loader.load();
 
 	        // 占쎈뼄占쎌뵠占쎈섰嚥≪뮄�젃 占쎈뮞占쎈�믭옙�뵠筌욑옙�몴占� 筌띾슢諭븝옙�뼄.
@@ -614,7 +618,7 @@ public class MainApp extends Application {
 	        dialogStage.setScene(scene);
 
 	        // resource �뚢뫂�뱜嚥▲끇�쑎占쎈퓠 占쎄퐬占쎌젟占쎈립占쎈뼄.
-	        LoginController controller = loader.getController();
+	        SignInController controller = loader.getController();
 	        controller.setDialogStage(dialogStage);
 	        controller.setMainApp(this);
 
@@ -628,11 +632,11 @@ public class MainApp extends Application {
 	    }
 	}
 	
-	public boolean showSignInDialog() {
+	public boolean showLoginDialog() {
 	    try {
 	        // fxml 占쎈솁占쎌뵬占쎌뱽 嚥≪뮆諭띰옙釉��⑨옙 占쎄돌占쎄퐣 占쎄퉱嚥≪뮇�뒲 占쎈뮞占쎈�믭옙�뵠筌욑옙�몴占� 筌띾슢諭븝옙�뼄.
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(MainApp.class.getResource("view/SignInView.fxml"));
+	        loader.setLocation(MainApp.class.getResource("view/LoginView.fxml"));
 	        AnchorPane page = (AnchorPane) loader.load();
 
 	        // 占쎈뼄占쎌뵠占쎈섰嚥≪뮄�젃 占쎈뮞占쎈�믭옙�뵠筌욑옙�몴占� 筌띾슢諭븝옙�뼄.

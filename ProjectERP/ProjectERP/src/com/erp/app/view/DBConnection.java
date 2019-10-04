@@ -74,29 +74,11 @@ public class DBConnection {
 			 * insert, delete, update, create, alter - executeUpdate*/
 			st.executeUpdate(text);
 			return true;
-			//if(rs.next()) {
-			//	return true;
-			//}
 		}
 		catch(Exception e)
 		{
 			System.out.println("데이터베이스 검색 오류 : " + text + "에서 " +e.getMessage() + "가 발생하였습니다.");
 		}
 		return false;
-	}
-	public void test() {
-		try {
-			rs = st.executeQuery("select * from resource");
-			while(rs.next()) {
-				String name = rs.getString("name");
-				int id = rs.getInt("r_id");
-				int price = rs.getInt(3);
-				int stack = rs.getInt(4);
-				System.out.println(name + " " + id + " " + price + " " + stack);
-				
-			}
-		} catch(Exception e) {
-			System.out.println(e.getMessage());
-		}
 	}
 }

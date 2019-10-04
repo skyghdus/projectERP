@@ -26,14 +26,14 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#loginHandler" text="생성" GridPane.rowIndex="5" />
-            <Button mnemonicParsing="false" text="제거" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" onAction="#create" text="생성" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" onAction="#delete" text="제거" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label text="ID" GridPane.rowIndex="1" />
             <Label text=" Password" GridPane.rowIndex="2" />
             <PasswordField fx:id="pf" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="tf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Department" GridPane.rowIndex="4" />
-            <TextField fx:id="dpf" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="dtf" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>
